@@ -14,25 +14,60 @@
     </header>
 
     <main>
-        <section class="card-dica">
+        <!-- Card 1 -->
+        <article class="card-dica" onclick="abrirModal('modal1')">
+            <h2>1. Organize as Contas do Mês</h2>
+            <p>Clique aqui para ver a dica completa...</p>
+        </article>
+
+        <!-- Modal 1 -->
+        <dialog id="modal1" class="modal-dica">
             <h2>1. Organize as Contas do Mês</h2>
             <p>Guarde os comprovantes de pagamento de água, luz e telefone em uma pasta. Separar o que já foi pago evita juros e pagamentos duplicados.</p>
-        </section>
+            <button class="btn-fechar" onclick="fecharModal('modal1')">Fechar Dica</button>
+        </dialog>
 
-        <section class="card-dica">
+        <!-- Card 2 -->
+        <article class="card-dica" onclick="abrirModal('modal2')">
+            <h2>2. Atenção à Restituição do IR</h2>
+            <p>Clique aqui para ver a dica completa...</p>
+        </article>
+
+        <!-- Modal 2 -->
+        <dialog id="modal2" class="modal-dica">
             <h2>2. Atenção à Restituição do IR</h2>
             <p>Pessoas com mais de 60 anos têm prioridade na fila de restituição do Imposto de Renda. Fique atento às datas do seu lote!</p>
-        </section>
+            <button class="btn-fechar" onclick="fecharModal('modal2')">Fechar Dica</button>
+        </dialog>
 
-        <section class="card-dica">
+        <!-- Card 3 -->
+        <article class="card-dica" onclick="abrirModal('modal3')">
+            <h2>3. Cuidado com Empréstimos</h2>
+            <p>Clique aqui para ver a dica completa...</p>
+        </article>
+
+        <!-- Modal 3 -->
+        <dialog id="modal3" class="modal-dica">
             <h2>3. Cuidado com Empréstimos</h2>
             <p>Nunca assine contratos de empréstimo consignado sem a ajuda de alguém de sua confiança para ler as letras pequenas.</p>
-        </section>
+            <button class="btn-fechar" onclick="fecharModal('modal3')">Fechar Dica</button>
+        </dialog>
     </main>
 
     <footer>
         <p>Dica de Ouro: Em caso de dúvidas, consulte sempre um contador de sua confiança.</p>
     </footer>
 
+    <script>
+        function abrirModal(idModal) {
+            const modal = document.getElementById(idModal);
+            modal.showModal(); // Método nativo que ativa o backdrop/fundo escuro
+        }
+
+        function fecharModal(idModal) {
+            const modal = document.getElementById(idModal);
+            modal.close();
+        }
+    </script>
 </body>
 </html>
