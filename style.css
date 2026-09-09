@@ -45,6 +45,14 @@ main {
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 25px;
+    cursor: pointer; /* Indica que o card é interativo/clicável */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse por cima do Card */
+.card-dica:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-dica h2 {
@@ -56,6 +64,54 @@ main {
 .card-dica p {
     font-size: 22px;
     color: #222222;
+}
+
+/* Estilos da Modal Nativa (<dialog>) */
+.modal-dica {
+    border: 4px solid #003366;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.modal-dica h2 {
+    color: #003366;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.modal-dica p {
+    font-size: 22px;
+    color: #111111;
+    margin-bottom: 25px;
+}
+
+/* Efeito do Fundo Escurecido (Sobreposição/Overlay) */
+.modal-dica::backdrop {
+    background-color: rgba(0, 0, 0, 0.75); /* Escurece o resto da tela */
+    backdrop-filter: blur(4px); /* (Opcional) Adiciona um leve desfoque ao fundo */
+}
+
+/* Botão de Fechar dentro da Modal */
+.btn-fechar {
+    background-color: #003366;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto; /* Alinha o botão à direita */
+}
+
+.btn-fechar:hover {
+    background-color: #002244;
 }
 
 /* Rodapé */
