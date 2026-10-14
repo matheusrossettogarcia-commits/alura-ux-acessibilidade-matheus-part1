@@ -5,69 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descomplicando a Contabilidade</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca Three.js para formas 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-    <header>
-        <h1>Dicas Financeiras</h1>
-        <p>Aprenda a cuidar do seu dinheiro de forma simples</p>
-    </header>
+    <canvas id="bg-3d"></canvas>
 
-    <main>
-        <!-- Card 1 -->
-        <article class="card-dica" onclick="abrirModal('modal1')">
-            <h2>1. Organize as Contas do Mês</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
+    <div class="content-wrapper">
+        <header>
+            <h1>Dicas Financeiras</h1>
+            <p>Aprenda a cuidar do seu dinheiro de forma simples</p>
+        </header>
 
-        <!-- Modal 1 -->
-        <dialog id="modal1" class="modal-dica">
-            <h2>1. Organize as Contas do Mês</h2>
-            <p>Guarde os comprovantes de pagamento de água, luz e telefone em uma pasta. Separar o que já foi pago evita juros e pagamentos duplicados.</p>
-            <button class="btn-fechar" onclick="fecharModal('modal1')">Fechar Dica</button>
-        </dialog>
+        <main>
+            <!-- Card 1 -->
+            <a href="organizar-contas.html" class="card-dica">
+                <h2>1. Organize as Contas do Mês</h2>
+                <p>Aprenda a separar o que já foi pago, organizar comprovantes e evitar cobranças duplicadas ou juros por atraso.</p>
+                <span class="card-link">Clique aqui para ver a página completa &rarr;</span>
+            </a>
 
-        <!-- Card 2 -->
-        <article class="card-dica" onclick="abrirModal('modal2')">
-            <h2>2. Atenção à Restituição do IR</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
+            <!-- Card 2 -->
+            <a href="restituicao-ir.html" class="card-dica">
+                <h2>2. Atenção à Restituição do IR</h2>
+                <p>Saiba quem tem prioridade na fila de restituição do Imposto de Renda e como consultar as datas de cada lote.</p>
+                <span class="card-link">Clique aqui para ver a página completa &rarr;</span>
+            </a>
 
-        <!-- Modal 2 -->
-        <dialog id="modal2" class="modal-dica">
-            <h2>2. Atenção à Restituição do IR</h2>
-            <p>Pessoas com mais de 60 anos têm prioridade na fila de restituição do Imposto de Renda. Fique atento às datas do seu lote!</p>
-            <button class="btn-fechar" onclick="fecharModal('modal2')">Fechar Dica</button>
-        </dialog>
+            <!-- Card 3 -->
+            <a href="cuidados-emprestimos.html" class="card-dica">
+                <h2>3. Cuidado com Empréstimos</h2>
+                <p>Entenda os riscos do consignado, como evitar fraudes e o que observar nas letras pequenas antes de assinar.</p>
+                <span class="card-link">Clique aqui para ver a página completa &rarr;</span>
+            </a>
+        </main>
 
-        <!-- Card 3 -->
-        <article class="card-dica" onclick="abrirModal('modal3')">
-            <h2>3. Cuidado com Empréstimos</h2>
-            <p>Clique aqui para ver a dica completa...</p>
-        </article>
+        <footer>
+            <p>Dica de Ouro: Em caso de dúvidas, consulte sempre um contador de sua confiança.</p>
+        </footer>
+    </div>
 
-        <!-- Modal 3 -->
-        <dialog id="modal3" class="modal-dica">
-            <h2>3. Cuidado com Empréstimos</h2>
-            <p>Nunca assine contratos de empréstimo consignado sem a ajuda de alguém de sua confiança para ler as letras pequenas.</p>
-            <button class="btn-fechar" onclick="fecharModal('modal3')">Fechar Dica</button>
-        </dialog>
-    </main>
-
-    <footer>
-        <p>Dica de Ouro: Em caso de dúvidas, consulte sempre um contador de sua confiança.</p>
-    </footer>
-
-    <script>
-        function abrirModal(idModal) {
-            const modal = document.getElementById(idModal);
-            modal.showModal(); // Método nativo que ativa o backdrop/fundo escuro
-        }
-
-        function fecharModal(idModal) {
-            const modal = document.getElementById(idModal);
-            modal.close();
-        }
-    </script>
+    <script src="script-3d.js"></script>
 </body>
 </html>
