@@ -12,6 +12,29 @@ body {
     background-color: #f4f6f9;
     color: #111111; /* Contraste forte contra o fundo */
     padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Canvas 3D de Fundo */
+#bg-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+/* Container do Conteúdo Principal */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Cabeçalho */
@@ -22,6 +45,7 @@ header {
     padding: 30px 20px;
     border-radius: 12px;
     margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 header h1 {
@@ -35,7 +59,7 @@ header p {
 
 /* Cartões de Dicas */
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -47,12 +71,16 @@ main {
     margin-bottom: 25px;
     cursor: pointer; /* Indica que o card é interativo/clicável */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: block;
+    color: inherit;
 }
 
 /* Efeito ao passar o mouse por cima do Card */
 .card-dica:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f7ff;
 }
 
 .card-dica h2 {
@@ -66,62 +94,97 @@ main {
     color: #222222;
 }
 
-/* Estilos da Modal Nativa (<dialog>) */
-.modal-dica {
-    border: 4px solid #003366;
-    border-radius: 16px;
-    padding: 30px;
-    max-width: 600px;
-    width: 90%;
-    margin: auto;
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.modal-dica h2 {
+.card-link {
+    display: inline-block;
+    margin-top: 15px;
     color: #003366;
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-.modal-dica p {
-    font-size: 22px;
-    color: #111111;
-    margin-bottom: 25px;
-}
-
-/* Efeito do Fundo Escurecido (Sobreposição/Overlay) */
-.modal-dica::backdrop {
-    background-color: rgba(0, 0, 0, 0.75); /* Escurece o resto da tela */
-    backdrop-filter: blur(4px); /* (Opcional) Adiciona um leve desfoque ao fundo */
-}
-
-/* Botão de Fechar dentro da Modal */
-.btn-fechar {
+/* Estilos Específicos das Páginas Secundárias */
+.btn-voltar {
+    display: inline-block;
     background-color: #003366;
     color: #ffffff;
+    text-decoration: none;
     font-size: 20px;
     font-weight: bold;
     padding: 12px 24px;
-    border: none;
     border-radius: 8px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto; /* Alinha o botão à direita */
+    margin-bottom: 25px;
+    transition: background-color 0.2s ease;
 }
 
-.btn-fechar:hover {
+.btn-voltar:hover {
     background-color: #002244;
+}
+
+.pagina-detalhes {
+    background-color: #ffffff;
+    border: 3px solid #003366;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.pagina-detalhes h2 {
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e6f0fa;
+    padding-bottom: 10px;
+}
+
+.pagina-detalhes h3 {
+    color: #003366;
+    font-size: 26px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.pagina-detalhes p {
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #222222;
+}
+
+.pagina-detalhes ul, .pagina-detalhes ol {
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+
+.pagina-detalhes li {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+/* Container de Figuras / Ilustrações */
+.ilustracao-container {
+    text-align: center;
+    margin: 25px 0;
+    padding: 20px;
+    background-color: #e6f0fa;
+    border-radius: 10px;
+}
+
+.ilustracao-svg {
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
 }
 
 /* Rodapé */
 footer {
-    max-width: 800px;
+    max-width: 900px;
     margin: 30px auto 0 auto;
     background-color: #e6f0fa;
     border-left: 8px solid #003366;
     padding: 20px;
     border-radius: 8px;
+    position: relative;
+    z-index: 1;
 }
 
 footer p {
